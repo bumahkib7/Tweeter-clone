@@ -22,7 +22,7 @@ export class UsersService {
   }
 
 
-  follow(userId): Observable<any> {
+  follow(userId: number): Observable<any> {
     const apiLink = this.USERS_API + '/' + userId + '/follow';
     let headers = new HttpHeaders()
       .set('Authorization', 'Bearer ' + this.authService.getToken());

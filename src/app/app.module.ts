@@ -4,13 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { UsersService } from './users.service';
 import {TweetsService} from "./tweets.service";
+import { TweetsListComponent } from './tweets-list/tweets-list.component';
+import {RouterModule, Routes} from "@angular/router";
+import { TweetsAddComponent } from './tweets-add/tweets-add.component';
+import {FormsModule} from "@angular/forms";
+
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/tweets-list', pathMatch: 'full' },
+  { path: 'tweets-list', component: TweetsListComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TweetsListComponent,
+    TweetsAddComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [TweetsService, UsersService],
   bootstrap: [AppComponent]
