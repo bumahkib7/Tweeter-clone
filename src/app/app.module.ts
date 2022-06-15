@@ -8,6 +8,7 @@ import { TweetsListComponent } from './tweets-list/tweets-list.component';
 import {RouterModule, Routes} from "@angular/router";
 import { TweetsAddComponent } from './tweets-add/tweets-add.component';
 import {FormsModule} from "@angular/forms";
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/tweets-list', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TweetsListComponent,
-    TweetsAddComponent
+    TweetsAddComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
